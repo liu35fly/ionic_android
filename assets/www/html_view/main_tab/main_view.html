@@ -1,0 +1,77 @@
+<ion-header-bar align-title="center" class="bar-stable">
+    <div class="buttons">
+        <button class="button button-icon ion-ios-arrow-left" ng-click="$ionicGoBack()">
+        </button>
+    </div>
+    <div class="h1 title login-title">首页</div>
+</ion-header-bar>
+<ion-view>
+    <!--<ion-nav-buttons side="left">-->
+    <!--<button class="button" ng-click="doSomething()">-->
+    <!--设置-->
+    <!--</button>-->
+    <!--</ion-nav-buttons>-->
+    <ion-content>
+
+        <div >
+            <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true"
+                           slide-interval=2000 show-pager="true"
+                           pager-click="pageClick(index)" active-slide="model.activeIndex"
+                           delegate-handle="delegateHandler" style="width: 100%;height: 250px;">
+                <ion-slide ng-repeat="x in ad">
+                    <div class="box blue">
+                        <img ng-src="{{x}}" style="width: 100%;height: 250px;">
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+
+            <div>
+                <li>
+                    <div>
+                        <h3 style="float: left;margin-right:20px">精品推荐</h3>
+                        <p style="margin-top:10px ;padding-top:10px;padding-left:10px;padding-right:10px">精品商品尽收眼底 <a
+                                style="float:right" href="#all">更多</a></p>
+                    </div>
+                </li>
+                <ul style="background-color:#dddddd; width: 100%; height: 170px;   margin: 0;overflow: hidden;  ">
+                    <li ng-repeat="s in shangPing" style="  float: left;width: 30%;height: 100px;margin: 5px;">
+                        <div class="list card" ng-click="jingpingClik({{s.id}})">
+                            <div class="item item-image">
+                                <img ng-src="{{s.icon_url}}">
+                                <p ng-bind="s.name" class="ng-binding"></p>
+                                <p ng-bind="s.scale" class="ng-binding"></p>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div style="margin:10px">
+                    <img src="img/test.jpg" style=" max-width:100%;height:auto;" ng-click="guanggaoClik()"/>
+                </div>
+                <!--<ion-item class="item-avatar item-icon-right" type="item-text-wrap" >-->
+                <!--<img ng-src="img/test.jpg" style=" max-width:100%;height:auto;" />-->
+                <!--</ion-item>-->
+            </div>
+            <div>
+                <ion-grid>
+                    <ion-row style="flex-flow: row wrap">
+                        <ion-col
+                                style=" float: left;width: 45%;height: 100px; margin: 5px;padding-left: 20px;margin-bottom: 50px"
+                                ng-repeat="m in allShangping">
+                            <div class="list card" ng-click="shangPingClik(m)">
+                                    <div class="item item-image">
+                                        <img ng-src="{{m.icon_url}}">
+                                        <p ng-bind="m.name" class="ng-binding"></p>
+                                        <p ng-bind="m.scale" class="ng-binding"></p>
+                                    </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,63 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-stable">
+        <div>
+            <button class="button button-icon" ng-click="$ionicGoBack()">返回
+            </button>
+        </div>
+        <div class="h1 title login-title">商品详情</div>
+        <button class="button button-icon" ng-click="$ionicGoBack()">店铺信息
+        </button>
+    </ion-header-bar>
+    <ion-content>
+            <img src="img/test.jpg"
+                 style="width: 100%;height: 150px;padding: 10px;background-color: #dddddd">
+            <p>中华保健瓶</p>
+            <p>￥75</p>
+            <div class="item item-button-right" style="border-width:1px;border-bottom: solid;border-top: solid;border-color: #AAAAAA;width: 100%">
+                规格
+                    <button class="button button-positive">
+                        选择规格
+                    </button>
+                <!--<p style="width: 50%">选择规格</p>-->
+                <!--<button style="width:20%;margin-right: 5px">规格</button>-->
+            </div>
+            <div style="float: left;border-width:1px;border-bottom: solid;border-top: solid;border-color: #AAAAAA;width: 100%;margin-top: 20px;padding: 10px">
+                <img src="img/test.jpg" style="width: 20%;height: 80px;float: left">
+                <p style="margin-left: 100px">红星食品厂</p>
+                <p style="margin-left: 100px">好评率：98%</p>
+            </div>
+            <div class="button-bar">
+                <a class="button" ng-click="pic()">图文信息</a>
+                <a class="button" ng-click="pinglun()">累计评价</a>
+            </div>
+            <ion-slide-box active-slide="myActiveSlide" style="height: 500px">
+                <ion-slide>
+                    <ion-view title="img" hide-nav-bar="true">
+                        <ion-scroll zooming="true" style="width: 100%; height: 500px">
+                            <!--<img src="img/test.jpg">-->
+                            <div class="container">
+                                <div ng-include="'html_view/info_view/information.html'"></div>
+                            </div>
+                            <!--<iframe   frameborder=0   border=0   width=100%   height=1000px   src="html_view/info_view/evaluation.html" mce_src="html_view/info_view/evaluation.html"></iframe>-->
+                        </ion-scroll>
+                    </ion-view>
+                </ion-slide>
+                <ion-slide>
+                    <ion-view title="img" hide-nav-bar="true">
+                        <ion-scroll zooming="true" style="width: 100%; height: 500px">
+                            <!--<img src="img/test.jpg">-->
+                            <div class="container">
+                                <div ng-include="'html_view/info_view/evaluation.html'"></div>
+                            </div>
+                        </ion-scroll>
+                    </ion-view>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer" style="width:100%">
+        <a class="button" ng-click="addCar()" style="width: 49%;float:left">加入购物车</a>
+        <a class="button" ng-click="pay()" style="width: 49%">去付款</a>
+    </div>
+</ion-view>
+

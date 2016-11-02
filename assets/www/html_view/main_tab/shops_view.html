@@ -1,0 +1,61 @@
+<ion-header-bar align-title="center" class="bar-stable">
+    <div class="buttons">
+        <button class="button button-icon ion-ios-arrow-left" ng-click="$ionicGoBack()">
+        </button>
+    </div>
+    <div class="h1 title login-title" >店铺街</div>
+</ion-header-bar>
+<div class="bar bar-header" style="border-color: transparent;margin-top: 40px;width: 100%">
+    <div class="item item-input item-select" style="width: 50%">
+        <div class="input-label">
+            分类
+        </div>
+        <select ng-change="choice_1()" ng-model="select_1"  style="margin-right: 10px">
+            <option value="">默认</option>
+            <option >食品</option>
+            <option >首饰</option>
+        </select>
+    </div>
+    <div class="item item-input item-select" style="width: 50%">
+        <div class="input-label">
+            分类
+        </div>
+        <select ng-change="choice_2()" ng-model="select_2" style="margin-right: 10px">
+            <option value="">时间</option>
+            <option>人气</option>
+            <option>销量</option>
+        </select>
+    </div></div>
+<ion-view >
+    <!--<ion-nav-buttons side="right">-->
+        <!--<button class="button" ng-click="doSomething()">-->
+            <!--搜索-->
+        <!--</button>-->
+    <!--</ion-nav-buttons>-->
+    <ion-content>
+            <div style="margin-top: 40px">
+                <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()" ></ion-refresher>
+                <ul style="background-color:#dddddd; width: 100%; height: auto;   margin: 0;overflow: hidden;  ">
+                    <li ng-repeat="item in items" style="  float: left;width: 98%;height: 170px;margin: 5px;">
+                        <div class="list card" ng-click="shangPingClik({{item.id}})">
+
+                                <div style="padding: 10px;float: left;width: 50%">
+                                        <img ng-src="{{item.icon_url}}" style="float: left;width: 100%;height: 150px">
+
+                                </div>
+                                <div style="margin-left: 50px;padding-top: 5px">
+                                    <p ng-bind="item.name" class="ng-binding" ></p>
+                                    <p ng-bind="item.des" class="ng-binding" ></p>
+                                    <button style="padding-bottom: 1px">收藏</button>
+
+
+                                </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <ion-infinite-scroll ng-if="moredata" on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll>
+            </div>
+
+    </ion-content>
+</ion-view>

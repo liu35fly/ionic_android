@@ -1,0 +1,18 @@
+<ion-tabs class="tabs-positive tabs-icon-top " >
+    <!--href:选项卡对应的状态 icon-on:ion-tab非高亮图标  icon-off:ion-tab高亮图标-->
+    <ion-tab title="首页" icon-on="ion-ios-chatbubble" icon-off="ion-ios-chatbubble-outline" ui-sref="main.main">
+        <!--同一状态下有多个ion-nav-view,因此需要给它们设置name属性。并在配制路由的时候对应状态和渲染视图-->
+        <ion-nav-view name="main_view"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="店铺街" href="#/main/shops" icon-off="ion-new-tf" icon-on="ion-new-tf-off">
+        <ion-nav-view name="shops_view"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="购物车" href="#/main/cart" icon-off="ion-new-user" icon-on="ion-new-user-off">
+        <ion-nav-view name="shopping_cart"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="我的" href="#/main/my" icon-off="ion-new-user" icon-on="ion-new-user-off">
+        <ion-nav-view name="my_view"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

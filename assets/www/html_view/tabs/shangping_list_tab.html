@@ -1,0 +1,16 @@
+
+<ion-tabs class="tabs-positive tabs-icon-top " style="margin-bottom: 40px">
+    <!--href:选项卡对应的状态 icon-on:ion-tab非高亮图标  icon-off:ion-tab高亮图标-->
+    <ion-tab title="新品" href="#/tab/new_commodity" icon-on="ion-new-home-off" icon-off="ion-new-home">
+        <!--同一状态下有多个ion-nav-view,因此需要给它们设置name属性。并在配制路由的时候对应状态和渲染视图-->
+        <ion-nav-view name="new_commodity"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="销量" href="#/tab/sales" icon-off="ion-new-tf" icon-on="ion-new-tf-off">
+        <ion-nav-view name="scale_list"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="价格" href="#/tab/price" icon-off="ion-new-user" icon-on="ion-new-user-off">
+        <ion-nav-view name="price_list"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>
